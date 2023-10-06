@@ -1,0 +1,9 @@
+{% load menu_tags %}
+<ul>
+    {% for item in items %}
+        <li><a href="{% url 'tree' item.url %}">{{ item.name }}</a></li>
+        {% if item.url in request.path%}
+            {% draw_menu item.menu.name item.id %}
+        {% endif %}
+    {% endfor %}
+</ul>
