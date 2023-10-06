@@ -1,5 +1,6 @@
 from django import template
 from menu.tree_menu.models import Menu, MenuItem
+
 register = template.Library()
 
 @register.inclusion_tag("tree_menu/menu_tag.html", takes_context=True)
